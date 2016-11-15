@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
+
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
   match "/signout" => "sessions#destroy", :as => :signout, via: [:get, :post]
 end
