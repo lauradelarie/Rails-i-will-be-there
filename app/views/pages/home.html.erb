@@ -11,19 +11,28 @@
   <%= link_to "Sign in with Meetup", "/auth/meetup" %>
 <% end %>
 
-
-  <ul>
+<ul>
   <% @groups.each do |group| %>
-  <a href="<%= group["group_photo"]["photo_link"]%>">
-    <img src="<%= group["group_photo"]["thumb_link"] %>"><img><br>
-  </a>
-  <a href="<%= group["link"]%>">See this group on Meetup.com</a>
-  <li><%= group["city"] %></li>
+  <div class="group">
 
-    <ul>
-    <% group["topics"].each do |topic| %>
-    <li><%= topic["name"] %></li>
-    <% end %>
-    </ul>
+    <div class="title"><%= group["name"] %></div>
+
+    <div class="image">
+    <a href="<%= group["group_photo"]["photo_link"]%>">
+      <img src="<%= group["group_photo"]["thumb_link"] %>"><img><br>
+    </a>
+    </div>
+
+    <p><%= group["description"] %> </p>
+
+    <a href="<%= group["link"]%>">See this group on Meetup.com</a><br>
+
+      <!-- <ul>
+      <%# group["topics"].each do |topic| %>
+      <li><%#= topic["name"] %></li>
+      <%# end %>
+      </ul> -->
+  </div>
+  <br>
   <% end %>
-  </ul>
+</ul>
