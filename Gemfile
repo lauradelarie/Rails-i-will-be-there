@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'omniauth-meetup', :git => 'https://github.com/AdnanTheExcellent/omniauth-meetup'
+gem 'httparty'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
