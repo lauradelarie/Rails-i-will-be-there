@@ -16,6 +16,7 @@
   <% @groups.each do |group| %>
   <li><%= group["city"] %></li>
   <img src="<%= group["group_photo"]["thumb_link"] %>"><img>
+  <a href="<%= group["link"]%>">See this group on Meetup.com</a>
 
     <ul>
     <%= group["topics"].each do |topic| %>
