@@ -23,3 +23,8 @@
  h1 {
    font-family: 'Leckerli One', cursive;
  }
+
+.logo {
+  max-width: 150px;
+  max-height: 150px;
+}
