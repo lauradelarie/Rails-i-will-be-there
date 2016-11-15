@@ -15,5 +15,12 @@
   <ul>
   <% @groups.each do |group| %>
   <li><%= group["city"] %></li>
+  <img src="<%= group["group_photo"]["thumb_link"] %>"><img>
+
+    <ul>
+    <%= group["topics"].each do |topic| %>
+    <li><%= topic["name"] %></li>
+    <% end %>
+    </ul>
   <% end %>
   </ul>

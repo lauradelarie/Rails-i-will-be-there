@@ -13,6 +13,7 @@ class Meetup
   end
 
   def groups
+    debugger
     self.class.get("/2/groups?member_id=#{@member_id}", @options).parsed_response["results"]
   end
 end
