@@ -1,7 +1,14 @@
-<a href='<%=member_url%>'><img class='logo' src="http://res.cloudinary.com/dsiyhc1tt/image/upload/v1479235744/meetup-logo_h5atgk.png"</a>
 
 
-<h1> You made it Home </h1>
+<div class="header">
+  <div class="brand">
+  <a class='logo' href='<%=member_url%>'><img src="http://res.cloudinary.com/dsiyhc1tt/image/upload/v1479235744/meetup-logo_h5atgk.png"></a>
+  <h1 class="title">I Will be There!</h1>
+  </div>
+    <nav class="navbar">
+    </nav>
+</div>
 
 
-  <%= link_to "Sign in with Meetup", "/auth/meetup" %>
+<!-- make this link switch between sign in and sign out depending on where you are -->
+<span class="sign-in"> <%= link_to "Sign in with Meetup", "/auth/meetup" %></span>

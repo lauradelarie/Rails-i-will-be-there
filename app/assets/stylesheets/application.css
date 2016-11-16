@@ -15,16 +15,49 @@
  */
 
  html, body {
-   margin: 0px;
+   margin: 10px;
    padding: 0px;
    border: 0px;
- }
-
- h1 {
-   font-family: 'Leckerli One', cursive;
  }
 
 .logo {
   max-width: 150px;
   max-height: 150px;
 }
+
+
+
+.header{
+  display:flex;
+  max-width:1250px;
+  margin:auto;
+  justify-content:space-between;
+  letter-spacing:2px;
+}
+
+  .title{
+    font-family: 'Leckerli One', cursive;
+    font-size:60px;
+    text-align:left;
+  }
+
+  .navbar{
+    font-family:'Slabo 27px', sans-serif;
+    display:flex;
+    list-style-type: none;
+    align-items: center;
+    letter-spacing:1px;
+  }
+
+  .sign-in{
+    font-size: 18px;
+    margin:10px 20px 10px 100px;
+    text-decoration: none;
+  }
+
+.group {
+  margin: 10px;
+}
+  .group-title {
+    font-size: 24px;
+  }
