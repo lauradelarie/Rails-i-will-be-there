@@ -18,8 +18,6 @@ class PagesController < ApplicationController
     current_user = User.first
     oauth_token = current_user.token
     member_id = current_user.uid
-    debugger
-    @groups = Meetup.new(oauth_token, member_id).groups
     @recommended_events = Meetup.new(oauth_token, member_id).recommended_events
     @events = Meetup.new(oauth_token, member_id).events
   end

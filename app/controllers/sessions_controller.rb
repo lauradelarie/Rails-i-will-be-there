@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
 #destroys a user session when user logs out
   def destroy
-    User.find_by_id(session[:user_id]).destroy
+    User.find_by_id(session[:user_id]).update(token: nil)
     session[:user_id] = nil
 
     redirect_to root_url, :notice => "Signed out!"
