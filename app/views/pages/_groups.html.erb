@@ -1,0 +1,23 @@
+<h1>Look it's your groups!</h1>
+
+
+<% @groups.each do |group| %>
+<div class="group">
+
+  <div class="group-title" id="<%= group["id"] %>"><%= group["name"] %></div>
+
+  <div class="image">
+    <%- if group["group_photo"].present? %>
+
+      <a href='<%= group["group_photo"]["photo_link"] %>'><img src="<%= group["group_photo"]["thumb_link"] %>"></a>
+
+    <% end %>
+  </a>
+  </div>
+
+
+  <a href="<%= group["link"]%>" target="_blank">See this group on Meetup.com</a><br>
+
+</div>
+<br>
+<% end %>
