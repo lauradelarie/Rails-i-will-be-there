@@ -9,10 +9,26 @@
 <% @recommended_events.each do |re| %>
 <div class="recommended-events">
   <ul>
-    <li><%= re["name"] %></li>
-    <li><%= re["group"]["name"] %></li>
+    <li><strong>Event:</strong><%= re["name"] %></li>
+    <li><strong>Group:</strong><%= re["group"]["name"] %></li>
+    <a href="<%= re["link"]%>" target="_blank">Check out this event on Meetup.com</a><br>
   </ul>
 </div>
+<% end %>
+
+<h2>Your events</h2>
+<% @events.each do |e| %>
+<ul>
+  <li><strong>Event:</strong><%= e["name"] %></li>
+  <li><strong>Where:</strong>
+    <%- if e["venue"].present? %>
+      <p><%= e["venue"]["name"] %>
+      <%= e["venue"]["address_1"] %>
+      <%= e["venue"]["city"].upcase %></p>
+    <% end %>
+  </li>
+
+</ul>
 <% end %>
 
 <h2>Your groups</h2>
@@ -22,14 +38,17 @@
   <div class="group-title"><%= group["name"] %></div>
 
   <div class="image">
-  <a href="<%= group["group_photo"]["photo_link"]%>">
-    <img src="<%= group["group_photo"]["thumb_link"] %>"><img><br>
+    <%- if group["group_photo"].present? %>
+
+      <a href='<%= group["group_photo"]["photo_link"] %>'><img src="<%= group["group_photo"]["thumb_link"] %>"></a>
+
+    <% end %>
   </a>
   </div>
 
   <p><%#= group["description"] %> </p>
 
-  <a href="<%= group["link"]%>">See this group on Meetup.com</a><br>
+  <a href="<%= group["link"]%>" target="_blank">See this group on Meetup.com</a><br>
 
     <!-- <ul>
     <%# group["topics"].each do |topic| %>

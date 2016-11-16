@@ -10,8 +10,8 @@ class PagesController < ApplicationController
     member_id = current_user.uid
     @groups = Meetup.new(oauth_token, member_id).groups
     @recommended_events = Meetup.new(oauth_token, member_id).recommended_events
+    @events = Meetup.new(oauth_token, member_id).events
   end
-
 
   private
     def member_signed_in?

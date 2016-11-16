@@ -19,4 +19,8 @@ class Meetup
   def recommended_events
     self.class.get("/recommended/events?page=10", @options)
   end
+
+  def events
+    self.class.get("/2/events?member_id=#{@member_id}&page=10", @options).parsed_response["results"]
+  end
 end
