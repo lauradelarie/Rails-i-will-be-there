@@ -6,7 +6,7 @@ feature "Favourites list", js: true do
 
     visit member_path
 
-    click_button('#add-favourite'), match: :first)
+    click_button('#add-favourite', match: :first)
 
     page.execute_script(submitFavourite())
 
