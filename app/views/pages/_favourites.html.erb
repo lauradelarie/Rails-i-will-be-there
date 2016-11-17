@@ -1,8 +1,10 @@
 
   <ul id="favourites">
     <% @favourites.each do |f| %>
-    <li id="<%="#{f.id}"%>"><%= f.group_name %>
-      <input type="checkbox" onClick="checkBox(event)">
-    </li>
+      <%- if f.active == true %>
+      <li id="<%="#{f.id}"%>"><%= f.group_name %>
+        <input type="checkbox" onClick="checkBox(event)">
+      </li>
+      <% end %>
     <% end %>
   <ul id="errors"></ul>

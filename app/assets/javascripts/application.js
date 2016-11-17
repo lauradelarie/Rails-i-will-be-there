@@ -76,4 +76,19 @@ function checkBox(event) {
     contentType: "application/json",
     dataType: "json"
   })
+
+  .success(function() {
+    debugger
+    $("#" + id).remove();
+  })
+
+  .fail(function(error) {
+    errors = JSON.parse(error.responseText).error
+
+    $.each(errors, function(index, value) {
+      var errorItem = $("<li></li>").html(value);
+      $("#errors").append(errorItem);
+    });
+  })
+
 }
