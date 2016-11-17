@@ -32,10 +32,9 @@ function createFavourite(groupName, groupId, userId) {
   })
 
   .success(function(data) {
+    debugger
     var newFavourite = $("<li></li>").html(data.favourite.group_name);
-    var newGroupId = $("<li></li>").html(data.favourite.group_id);
-    var newUserId = parseInt($("<li></li>").html(data.favourite.user));
-    $("#favourites").append( newFavourite, newGroupId, newUserId );
+    $("#favourites").append( newFavourite );
   })
 
   .fail(function(error) {
@@ -50,7 +49,6 @@ function createFavourite(groupName, groupId, userId) {
 
 function submitFavourite(event) {
   event.preventDefault();
-  debugger
 
   var groupElement = $(event.target).parent().parent()
   var id = groupElement.attr('id');

@@ -28,10 +28,9 @@ class PagesController < ApplicationController
   def create
     favourite = Favourite.create(fave_params)
     if favourite.save
-      debugger
       render status: 200, json: {
         message: "Group added to favourites!",
-        favourite: favourite  
+        favourite: favourite
       }.to_json
     else
       render status: 422, json: {
