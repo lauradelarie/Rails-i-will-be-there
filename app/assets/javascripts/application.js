@@ -14,3 +14,49 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function createFavourite(groupName, groupId, userId) {
+  $.ajax({
+    type: "POST",
+    url: "/pages",
+    data: JSON.stringify({
+      favourite: {
+      group_id: groupId,
+      group_name: groupName,
+      user_id: userId
+    }
+    }),
+
+    contentType: "application/json",
+    dataType: "json"
+  })
+
+  .success(function(data) {
+    var newFavourite = $("<li></li>").html(data.favourite.group_name);
+    var newGroupId = $("<li></li>").html(data.favourite.group_id);
+    var newUserId = parseInt($("<li></li>").html(data.favourite.user));
+    $("#favourites").append( newFavourite, newGroupId, newUserId );
+  })
+
+  .fail(function(error) {
+    errors = JSON.parse(error.responseText).error
+
+    $.each(errors, function(index, value) {
+      var errorItem = $("<li></li>").html(value);
+      $("#errors").append(errorItem);
+    });
+  })
+}
+
+function submitFavourite(event) {
+  event.preventDefault();
+  debugger
+
+  var groupElement = $(event.target).parent().parent()
+  var id = groupElement.attr('id');
+  var groupName = $('#' + id).data("name").groupName;
+  var groupId = $('#' + id).data("group").groupId;
+  var userId = $('#' + id).data("user").userId;
+
+  createFavourite(groupName, groupId, userId);
+}
