@@ -39,10 +39,28 @@ class PagesController < ApplicationController
     end
   end
 
+  def update
+    favourite = Favourite.find(params[:id])
+    favourite.update(fave_params)
+    if favourite.save
+      render status: 200, json: {
+        favourite: favourite
+      }.to_json
+    else
+      render status: 422, json: {
+        error: favourite.errors.full_messages
+      }.to_json
+    end
+  end
+
   private
 
+    # def box_params
+    #
+    # end
+
     def fave_params
-      params.require(:favourite).permit(:group_id, :group_name, :user_id)
+      params.require(:favourite).permit(:group_id, :group_name, :user_id, :active)
     end
 
     def member_signed_in?

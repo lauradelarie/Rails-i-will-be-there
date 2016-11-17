@@ -32,7 +32,6 @@ function createFavourite(groupName, groupId, userId) {
   })
 
   .success(function(data) {
-    debugger
     var newFavourite = $("<li></li>").html(data.favourite.group_name);
     $("#favourites").append( newFavourite );
   })
@@ -57,4 +56,24 @@ function submitFavourite(event) {
   var userId = $('#' + id).data("user").userId;
 
   createFavourite(groupName, groupId, userId);
+}
+
+function checkBox(event) {
+  event.preventDefault();
+
+  var favouriteElement = $(event.target).parent()
+  var id = favouriteElement.attr('id');
+
+  $.ajax({
+    type: "PUT",
+    url: '/pages/' + id,
+    data: JSON.stringify({
+      favourite: {
+        active: false
+      }
+    }),
+
+    contentType: "application/json",
+    dataType: "json"
+  })
 }
