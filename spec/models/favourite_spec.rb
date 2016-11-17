@@ -1,5 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Favourite, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  describe "association with user" do
+    let(:user) { create :user }
+
+    it "belongs to a user" do
+      favourite = user.favourites.new(group_name: "Whatever")
+
+      expect(favourite.user).to eq(user)
+    end
+  end
+
 end

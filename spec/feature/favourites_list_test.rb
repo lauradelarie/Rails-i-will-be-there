@@ -14,13 +14,4 @@ feature "Favourites list", js: true do
 
   end
 
-
-  # scenario 'removes favourite from list when checking box' do
-  #
-  #   visit member_path
-  #
-  #
-  #
-  #
-  # end
 end

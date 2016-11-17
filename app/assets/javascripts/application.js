@@ -34,6 +34,7 @@ function createFavourite(groupName, groupId, userId) {
   .success(function(data) {
     var newFavourite = $("<li></li>").html(data.favourite.group_name);
     $("#favourites").append( newFavourite );
+    $("#favourites").listview();
   })
 
   .fail(function(error) {
