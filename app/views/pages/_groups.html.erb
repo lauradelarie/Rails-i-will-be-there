@@ -1,30 +1,23 @@
-<h1>Look it's your groups!</h1>
-
-<%#= render 'favourites' %>
-
 
 <% @groups.each do |group| %>
-  <div id="<%= "#{group["id"]}" %>" data-hidden="true" data-group='{"groupId":"<%= group["id"] %>"}' data-name='{"groupName":"<%= group["name"] %>"}' data-user='{"userId":"<%= @user.id %>"}' class="group">
 
+<div id="<%= "#{group["id"]}" %>" data-hidden="true" data-group='{"groupId":"<%= group["id"] %>"}' data-name='{"groupName":"<%= group["name"] %>"}' data-user='{"userId":"<%= @user.id %>"}' class="group">
 
   <%= group["name"] %>
 
   <div class="image">
     <%- if group["group_photo"].present? %>
-
       <a href='<%= group["group_photo"]["photo_link"] %>'><img src="<%= group["group_photo"]["thumb_link"] %>"></a>
-
     <% end %>
-  </a>
   </div>
-
 
   <a href="<%= group["link"]%>" target="_blank">See this group on Meetup.com</a><br>
 
   <div id='add-favourite'>
-    <button type="button" id="add-favourite" onClick="submitFavourite(event)"> Knopje :D </button>
+    <button type="button" id="add-favourite" onClick="submitFavourite(event)"><h1> ♥ </h1></button>
   </div>
 
 </div>
 <br>
+
 <% end %>

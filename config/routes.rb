@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'member' => 'pages#member'
   get '/get_groups' => 'pages#get_groups'
-  # get '/toggle' => 'pages#toggle'
 
   resources :pages
 

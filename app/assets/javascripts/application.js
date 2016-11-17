@@ -51,8 +51,8 @@ function submitFavourite(event) {
 
   var groupElement = $(event.target).parent().parent()
   var id = groupElement.attr('id');
-  var groupName = $('#' + id).data("name").groupName;
   var groupId = $('#' + id).data("group").groupId;
+  var groupName = $('#' + id).data("name").groupName;
   var userId = $('#' + id).data("user").userId;
 
   createFavourite(groupName, groupId, userId);
@@ -78,7 +78,6 @@ function checkBox(event) {
   })
 
   .success(function() {
-    debugger
     $("#" + id).remove();
   })
 

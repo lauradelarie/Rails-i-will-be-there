@@ -10,8 +10,10 @@ class PagesController < ApplicationController
     member_id = current_user.uid
     @groups = Meetup.new(oauth_token, member_id).groups
     @user = User.first
+
     respond_to do |format|
       format.js
+      format.json { render json: @groups, status: :success }
     end
   end
 
@@ -19,6 +21,9 @@ class PagesController < ApplicationController
     current_user = User.first
     oauth_token = current_user.token
     member_id = current_user.uid
+    # groups and user are rendered in groups partial
+    @groups = Meetup.new(oauth_token, member_id).groups
+    @user = User.first
     @recommended_events = Meetup.new(oauth_token, member_id).recommended_events
     @events = Meetup.new(oauth_token, member_id).events
     @favourites = Favourite.all
