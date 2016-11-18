@@ -1,14 +1,13 @@
 <h2>Your events</h2>
 <% @events.each do |e| %>
-<ul>
-  <li><strong>Event:</strong><%= e["name"] %></li>
-  <li><strong>Where:</strong>
+<div class="events">
+  <span>Event: <strong><%= e["name"] %></strong></span>
+  <p>Location:
     <%- if e["venue"].present? %>
-      <p><%= e["venue"]["name"] %>
+      <%= e["venue"]["name"] %>
       <%= e["venue"]["address_1"] %>
       <%= e["venue"]["city"].upcase %></p>
     <% end %>
-  </li>
-
-</ul>
+  <a href="<%= e["event_url"] %>"> See Event</a>
+</div><br><br>
 <% end %>

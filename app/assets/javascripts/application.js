@@ -33,8 +33,14 @@ function createFavourite(groupName, groupId, userId) {
 
   .success(function(data) {
     var newFavourite = $("<li></li>").html(data.favourite.group_name);
-    $("#favourites").append( newFavourite );
-    $("#favourites").listview();
+    $("#favourites").append(newFavourite);
+
+    var checkbox = $('<input>');
+    checkbox.attr('type', 'checkbox');
+    checkbox.val(1);
+    checkbox.bind('click', checkBox);
+
+    newFavourite.append(checkbox);
   })
 
   .fail(function(error) {

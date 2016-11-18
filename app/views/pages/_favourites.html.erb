@@ -1,9 +1,10 @@
+<h3 class="group-title"> Your favourite groups </h3>
 
   <ul id="favourites">
     <% @favourites.each do |f| %>
       <%- if f.active == true %>
       <li id="<%="#{f.id}"%>"><%= f.group_name %>
-        <input type="checkbox" onClick="checkBox(event)">
+        <input id="box" type="checkbox" onClick="checkBox(event)">
       </li>
       <% end %>
     <% end %>

@@ -1,9 +1,10 @@
+<h2>Your groups</h2>
 
 <% @groups.each do |group| %>
 
 <div id="<%= "#{group["id"]}" %>" data-hidden="true" data-group='{"groupId":"<%= group["id"] %>"}' data-name='{"groupName":"<%= group["name"] %>"}' data-user='{"userId":"<%= @user.id %>"}' class="group">
 
-  <%= group["name"] %>
+  <p class="group-title"><%= group["name"] %></p>
 
   <div class="image">
     <%- if group["group_photo"].present? %>

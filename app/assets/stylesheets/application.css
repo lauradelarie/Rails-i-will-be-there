@@ -21,11 +21,15 @@
  }
 
 .logo {
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 120px;
+  max-height: 120px;
 }
 
-
+.welcome {
+  font-family: 'Leckerli One', cursive;
+  font-size:40px;
+  text-align:left;
+}
 
 .header{
   display:flex;
@@ -59,5 +63,25 @@
   margin: 10px;
 }
   .group-title {
-    font-size: 24px;
+    font-size: 20px;
+
+  }
+
+#wrap {
+   width:1200px;
+   margin:0 auto;
+}
+  #faves {
+    float:right;
+    width:33%;
+  }
+
+  #groups {
+    float:left;
+    width:33%;
+  }
+
+  #events {
+    display: inline-block;
+    width: 33%;
   }

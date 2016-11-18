@@ -1,22 +1,22 @@
 
-<a href='<%=root_url%>'><img class='logo' src="http://res.cloudinary.com/dsiyhc1tt/image/upload/v1479235744/meetup-logo_h5atgk.png"></a>
+<span class="welcome"><a href='<%=root_url%>'><img class='logo' src="http://res.cloudinary.com/dsiyhc1tt/image/upload/v1479235744/meetup-logo_h5atgk.png"></a>
 
-<h1 > Welcome <%= current_user.name %>! </h1>
+ Welcome <%= current_user.name %>! </span>
 <!-- Links to sign out with Meetup -->
   <%= link_to "Sign Out", signout_path %>
+  <br><br>
 
-<h2> Your favourite groups </h2>
-  <%= render 'favourites' %>
+<div class="wrap">
+  <div id="faves">
+    <%= render 'favourites' %>
+  </div>
 
-<h2>Your groups</h2>
+  <div id="groups">
+    <%= link_to "Update Overview", get_groups_path, :remote => true %> <br>
+    <%= render 'groups' %>
+  </div>
 
-<div id="groups">
-  <%= link_to "Update Overview", get_groups_path, :remote => true %>
-
-  <%= render 'groups' %>
+  <div id='events'>
+    <%= render 'events' %>
+  </div>
 </div>
-
-
-
-
-<%= render 'events' %>
