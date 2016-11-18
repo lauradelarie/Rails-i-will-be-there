@@ -5,7 +5,8 @@ class PagesController < ApplicationController
   end
 
   def get_groups
-    current_user = User.first
+    users_with_token = User.where.not(token: [nil, ''])
+    current_user = users_with_token[0]
     oauth_token = current_user.token
     member_id = current_user.uid
     @groups = Meetup.new(oauth_token, member_id).groups
@@ -18,7 +19,10 @@ class PagesController < ApplicationController
   end
 
   def member
-    current_user = User.first
+    debugger
+    users_with_token = User.where.not(token: [nil, ''])
+    current_user = users_with_token[0]
+    # current_user = User.first
     oauth_token = current_user.token
     member_id = current_user.uid
     # groups and user are rendered in groups partial
@@ -59,10 +63,6 @@ class PagesController < ApplicationController
   end
 
   private
-
-    # def box_params
-    #
-    # end
 
     def fave_params
       params.require(:favourite).permit(:group_id, :group_name, :user_id, :active)
