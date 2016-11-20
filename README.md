@@ -1,6 +1,7 @@
 
 
 I Will Be There -
+-----------
 is an app that uses the API of Meetup.com to provide an overview of a user's groups and upcoming events. A user is able to mark groups as 'favorite', creating a separate overview. This was an assignment of Codaisseur Traineeship, week 7.
 
 Aim of this project has been to learn and practice with:
