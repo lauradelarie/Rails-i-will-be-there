@@ -3,10 +3,10 @@
 
  Welcome <%= current_user.name %>! </span>
 <!-- Links to sign out with Meetup -->
-  <%= link_to "Sign Out", signout_path %>
+<span class="sign-out-link"> <%= link_to "Sign Out", signout_path %> </span>
   <br><br>
 
-<div class="wrap">
+<!-- <div class="wrap"> -->
   <div id="faves">
     <%= render 'favourites' %>
   </div>
@@ -21,4 +21,4 @@
   <div id='events'>
     <%= render 'events' %>
   </div>
-</div>
+<!-- </div> -->

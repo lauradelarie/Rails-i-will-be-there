@@ -33,14 +33,23 @@ function createFavourite(groupName, groupId, userId) {
 
   .success(function(data) {
     var newFavourite = $("<li></li>").html(data.favourite.group_name);
+    newFavourite.attr('id', '1234')
     $("#favourites").append(newFavourite);
+
 
     var checkbox = $('<input>');
     checkbox.attr('type', 'checkbox');
+    checkbox.attr('onClick', 'checkBox(event)');
     checkbox.val(1);
-    checkbox.bind('click', checkBox);
 
     newFavourite.append(checkbox);
+
+    // function updateFavourites(){
+    //   $.ajax({
+    //     type: "GET"
+    //     url: "goes to controller action for rerender favourites partial"
+    //   })
+    // }
   })
 
   .fail(function(error) {
@@ -67,7 +76,6 @@ function submitFavourite(event) {
 
 function checkBox(event) {
   event.preventDefault();
-
   var favouriteElement = $(event.target).parent()
   var id = favouriteElement.attr('id');
 

@@ -19,7 +19,6 @@ class PagesController < ApplicationController
   end
 
   def member
-    debugger
     users_with_token = User.where.not(token: [nil, ''])
     current_user = users_with_token[0]
     # current_user = User.first
