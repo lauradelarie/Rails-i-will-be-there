@@ -50,9 +50,9 @@
     text-decoration: none;
   }
 
-.group {
-  margin: 10px;
-}
+// .group {
+//   margin: 10px;
+// }
   /*.wrap {
    width:1200px;
    margin:0 auto;
@@ -68,22 +68,17 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    /*height:250px;*/
     width: 60%;
   }
 
-    .group-card {
-      display: flex;
-      flex-direction: column;
-      margin: 10px;
-      border: 1px solid black;
-      border-radius: 15px;
-      padding: 5px;
-      width: 25%;
-      height: 200px;
-      color: #2c373c;
-      padding-left: 20px;
-    }
+  .panel {
+      margin: 20px;
+      width: 300px;
+  }
+
+  .panel-body {
+    height: 150px;
+  }
 
     .sign-out-link {
       float: right;
@@ -95,6 +90,11 @@
       font-size: 16px;
       font-weight: bold;
       float:left;
+    }
+
+    .image {
+      max-width: 100px;
+      max-height: 100px;
     }
 
     #add-favourite {

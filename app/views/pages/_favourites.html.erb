@@ -1,15 +1,21 @@
 
-  <ul id="favourites">
-    <h3 class="group-title"> Your favourite groups </h3> <br><br>
+<div class="panel panel-default">
+  <div class="panel-heading">Your favourite groups </div>
+    <div class="panel-body">
 
-    <% @favourites.each do |f| %>
-      <%- if f.active == true %>
-      <div>
-      <li id="<%="#{f.id}"%>"><%= f.group_name %>
-        <input id="box" type="checkbox" onClick="checkBox(event)">
-      </li>
-      <% end %>
-    <% end %>
+      <ul id="favourites">
 
-  </ul>
-  <ul id="errors"></ul>
+        <% @favourites.each do |f| %>
+          <%- if f.active == true %>
+          <div>
+          <li id="<%="#{f.id}"%>"><%= f.group_name %>
+            <input id="box" type="checkbox" onClick="checkBox(event)">
+          </li>
+          <% end %>
+        <% end %>
+
+      </ul>
+      <ul id="errors"></ul>
+
+  </div>
+</div>
