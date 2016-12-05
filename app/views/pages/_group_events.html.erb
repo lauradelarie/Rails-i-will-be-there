@@ -1,5 +1,18 @@
 <% @group_events.each do |ge| %>
- <%- if ge['group']['name'] == "Amsterdam.rb"%>
-   <%= ge['group']['name'] %>
+ <%- if ge['group']['name'] == "Utrecht MOIRA Acoustic Open Mic"%>
+   <%= ge['name'] %>
+   <p>Location:
+     <%- if ge["venue"].present? %>
+       <%= ge["venue"]["name"] %>
+       <%= ge["venue"]["address_1"] %>
+       <%= ge["venue"]["city"].upcase %></p>
+     <% end %>
+
+  <!-- find the group by it's id ge['group']['id'] to get the image -->
+     <%- if ge['how_to_find_us'].present? %>
+      <a href="<%=ge['how_to_find_us']%>" target="_blank">Facebook page</a>
+     <% end %>
+    <br>
+
  <% end %>
 <% end %>

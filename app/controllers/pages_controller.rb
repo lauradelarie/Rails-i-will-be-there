@@ -24,9 +24,6 @@ class PagesController < ApplicationController
     oauth_token = current_user.token
     member_id = current_user.uid
     @group_events = Meetup.new(oauth_token, member_id).events
-    # .each do |e|
-    #   e['group']['name']
-    # end
 
     respond_to do |format|
       format.js
