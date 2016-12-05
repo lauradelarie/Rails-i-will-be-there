@@ -40,25 +40,25 @@ function createFavourite(groupName, groupId, userId, imageUrl) {
     var heading = $("<div></div>").html(groupName);
     heading.attr('class', 'panel-heading');
 
-    var label = $('<label></label>').html("Unfavourite this group");
-    // label.attr('onClick', 'checkBox(event)');
-
-    var checkbox = $('<input>');
-    checkbox.attr('type', 'checkbox');
-    // checkbox.attr('onClick', 'checkBox(event)');
-
-    label.append(checkbox);
-
-    var checkboxdiv = $('<div></div>').html(label);
+    // var label = $('<label></label>').html("Unfavourite this group");
+    // // label.attr('onClick', 'checkBox(event)');
+    //
+    // var checkbox = $('<input>');
+    // checkbox.attr('type', 'checkbox');
+    // // checkbox.attr('onClick', 'checkBox(event)');
+    //
+    // label.append(checkbox);
+    //
+    // var checkboxdiv = $('<div></div>').html(label);
 
     var photo = $('<img>');
     photo.attr('src', imageUrl);
     photo.attr('class', 'image');
 
-    var body = $('<div></div>').html(checkboxdiv);
+    var body = $('<div></div>').html(photo);
     body.attr('class', 'panel-body');
 
-    body.append(photo);
+    // body.append(checkboxdiv);
 
     panel.append(heading, body);
 
@@ -76,7 +76,6 @@ function createFavourite(groupName, groupId, userId, imageUrl) {
 }
 
 function submitFavourite(event) {
-  debugger
 
   event.preventDefault();
 
