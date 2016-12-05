@@ -57,10 +57,12 @@
    width:1200px;
    margin:0 auto;
 }*/
-  #faves {
-    float:right;
-    width:20%;
-    height:250px;
+  .favourites {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
   }
 
   .groups {
@@ -101,13 +103,8 @@
       /*float: right;*/
       /*padding: 2px;*/
     }
-
-
-  #favourites {
-    padding: none;
-  }
-
-  /*#events {
+  #events {
+    float: right;
     display: inline-block;
-    width: 33%;
-  }*/
+    width: 30%;
+  }

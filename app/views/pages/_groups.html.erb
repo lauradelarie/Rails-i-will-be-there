@@ -7,7 +7,7 @@
   <div class="panel panel-default" id="<%= "#{group["id"]}" %>" data-hidden="true" data-group='{"groupId":"<%= group["id"] %>"}' data-name='{"groupName":"<%= group["name"] %>"}' data-user='{"userId":"<%= @user.id %>"}'>
     <!-- Default panel contents -->
     <div class="panel-heading">
-      <%= group["name"] %>
+      <a href="<%= group["link"]%>" target="_blank"><%= group["name"] %></a>
     </div>
     <div class="panel-body">
       <%- if group["group_photo"].present? %>
@@ -18,7 +18,6 @@
     <!-- List group -->
     <ul class="list-group">
       <li class="list-group-item">
-        <a href="<%= group["link"]%>" target="_blank">See</a>
           <button type="button" id="add-favourite" onClick="submitFavourite(event)"> ♥ </button>
       </li>
     </ul>
