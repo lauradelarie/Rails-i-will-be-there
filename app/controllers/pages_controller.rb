@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def get_groups
+    debugger
     users_with_token = User.where.not(token: [nil, ''])
     current_user = users_with_token[0]
     oauth_token = current_user.token
