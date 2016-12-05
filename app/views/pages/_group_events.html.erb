@@ -1,0 +1,5 @@
+<% @group_events.each do |ge| %>
+ <%- if ge['group']['name'] == "Amsterdam.rb"%>
+   <%= ge['group']['name'] %>
+ <% end %>
+<% end %>

@@ -1,6 +1,5 @@
 class Meetup
   include HTTParty
-
   def initialize(oauth_token, member_id)
     self.class.base_uri "https://api.meetup.com"
     @member_id = member_id

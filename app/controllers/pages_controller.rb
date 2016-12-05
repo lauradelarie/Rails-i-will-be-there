@@ -5,13 +5,28 @@ class PagesController < ApplicationController
   end
 
   def get_groups
-    debugger
     users_with_token = User.where.not(token: [nil, ''])
     current_user = users_with_token[0]
     oauth_token = current_user.token
     member_id = current_user.uid
     @groups = Meetup.new(oauth_token, member_id).groups
     @user = User.first
+
+    respond_to do |format|
+      format.js
+      format.json { render json: @groups, status: :success }
+    end
+  end
+
+  def get_group_events
+    users_with_token = User.where.not(token: [nil, ''])
+    current_user = users_with_token[0]
+    oauth_token = current_user.token
+    member_id = current_user.uid
+    @group_events = Meetup.new(oauth_token, member_id).events
+    # .each do |e|
+    #   e['group']['name']
+    # end
 
     respond_to do |format|
       format.js

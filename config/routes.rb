@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'member' => 'pages#member'
   get '/get_groups' => 'pages#get_groups'
+  get '/get_group_events' => 'pages#get_group_events'
 
   resources :pages
+
 
 
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
