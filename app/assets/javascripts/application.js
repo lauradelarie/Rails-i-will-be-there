@@ -40,12 +40,16 @@ function createFavourite(groupName, groupId, userId, imageUrl) {
     var heading = $("<div></div>").html(groupName);
     heading.attr('class', 'panel-heading');
 
+    var label = $('<label></label>').html("Unfavourite this group");
+    // label.attr('onClick', 'checkBox(event)');
+
     var checkbox = $('<input>');
     checkbox.attr('type', 'checkbox');
-    checkbox.attr('onClick', 'checkBox(event)');
-    checkbox.val(1);
+    // checkbox.attr('onClick', 'checkBox(event)');
 
-    var checkboxdiv = $('<div></div>').html(checkbox);
+    label.append(checkbox);
+
+    var checkboxdiv = $('<div></div>').html(label);
 
     var photo = $('<img>');
     photo.attr('src', imageUrl);
@@ -89,7 +93,7 @@ function submitFavourite(event) {
 
 function checkBox(event) {
   event.preventDefault();
-  var favouriteElement = $(event.target).parent()
+  var favouriteElement = $(event.target).parent().parent();
   var id = favouriteElement.attr('id');
 
   $.ajax({
