@@ -9,7 +9,7 @@
     <div class="panel-heading"><%= f.group_name %></div>
       <div class="panel-body">
         <div id="<%="#{f.id}"%>">
-          <input id="box" type="checkbox" onClick="checkBox(event)">
+          <label onClick="checkBox(event)"><input id="box" type="checkbox" onClick="checkBox(event)">Unfavourtite</label>
           <img class='image' src='<%= f.photo_url %>'>
         </div>
       </div>
