@@ -64,7 +64,7 @@ class PagesController < ApplicationController
   private
 
     def fave_params
-      params.require(:favourite).permit(:group_id, :group_name, :user_id, :active)
+      params.require(:favourite).permit(:group_id, :group_name, :user_id, :active, :photo_url)
     end
 
     def member_signed_in?

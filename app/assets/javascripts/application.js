@@ -16,7 +16,7 @@
 //= require turbolinks
 //= require_tree .
 
-function createFavourite(groupName, groupId, userId) {
+function createFavourite(groupName, groupId, userId, imageUrl) {
   $.ajax({
     type: "POST",
     url: "/pages",
@@ -24,7 +24,8 @@ function createFavourite(groupName, groupId, userId) {
       favourite: {
       group_id: groupId,
       group_name: groupName,
-      user_id: userId
+      user_id: userId,
+      photo_url: imageUrl
     }
     }),
 
@@ -33,24 +34,31 @@ function createFavourite(groupName, groupId, userId) {
   })
 
   .success(function(data) {
-    var newFavourite = $("<li></li>").html(data.favourite.group_name);
-    newFavourite.attr('id', '1234')
-    $("#favourites").append(newFavourite);
+    var panel = $("<div></div>");
+    panel.attr('class', 'panel panel-default');
 
+    var heading = $("<div></div>").html(groupName);
+    heading.attr('class', 'panel-heading');
 
     var checkbox = $('<input>');
     checkbox.attr('type', 'checkbox');
     checkbox.attr('onClick', 'checkBox(event)');
     checkbox.val(1);
 
-    newFavourite.append(checkbox);
+    var checkboxdiv = $('<div></div>').html(checkbox);
 
-    // function updateFavourites(){
-    //   $.ajax({
-    //     type: "GET"
-    //     url: "goes to controller action for rerender favourites partial"
-    //   })
-    // }
+    var photo = $('<img>');
+    photo.attr('src', imageUrl);
+    photo.attr('class', 'image');
+
+    var body = $('<div></div>').html(checkboxdiv);
+    body.attr('class', 'panel-body');
+
+    body.append(photo);
+
+    panel.append(heading, body);
+
+    $('.favourites').append(panel)
   })
 
   .fail(function(error) {
@@ -64,15 +72,19 @@ function createFavourite(groupName, groupId, userId) {
 }
 
 function submitFavourite(event) {
+  debugger
+
   event.preventDefault();
 
-  var groupElement = $(event.target).parent().parent()
+  var groupElement = $(event.target).parent().parent().parent()
   var id = groupElement.attr('id');
   var groupId = $('#' + id).data("group").groupId;
   var groupName = $('#' + id).data("name").groupName;
   var userId = $('#' + id).data("user").userId;
+  var imageParent = $(event.target).parent().parent().siblings('.panel-body').children('a');
+  var imageUrl = imageParent.attr('href');
 
-  createFavourite(groupName, groupId, userId);
+  createFavourite(groupName, groupId, userId, imageUrl);
 }
 
 function checkBox(event) {
@@ -94,7 +106,7 @@ function checkBox(event) {
   })
 
   .success(function() {
-    $("#" + id).remove();
+    $("#" + id).parent().parent().remove();
   })
 
   .fail(function(error) {
@@ -107,3 +119,7 @@ function checkBox(event) {
   })
 
 }
+
+
+// $(document).on('turbolinks:load', function(){
+// });
