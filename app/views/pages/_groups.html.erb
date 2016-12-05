@@ -21,6 +21,11 @@
           <button type="button" id="add-favourite" onClick="submitFavourite(event)"> ♥ </button>
       </li>
       <li><%= group['organizer']['name'] %> </li>
+      <li>
+        <div id="get-group-events">
+          <%= link_to "Get group events", get_group_events_path, data: group['id'], :remote => true %> <br>
+        </div>
+      </li>
     </ul>
   </div>
   <% end %>
