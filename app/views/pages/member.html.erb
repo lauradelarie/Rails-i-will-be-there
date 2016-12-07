@@ -7,17 +7,13 @@
 <!-- Links to sign out with Meetup -->
   <br><br>
   <div id='events'>
-    <%= render 'events' %>
+    <%#= render 'events' %>
   </div>
 
-
-  <div id="faves">
-    <%= render 'favourites' %>
-  </div>
+  <%= render 'favourites' %>
 
   <%#= render 'recommended' %>
 
-  <div id="groups">
-    <%= link_to "See all your Groups", get_groups_path, :remote => true %> <br>
+
+  <div class="groups-link"><%= link_to "See all your Groups", get_groups_path, :remote => true %> </div> <br>
     <%#= render 'groups' %>
-  </div>
