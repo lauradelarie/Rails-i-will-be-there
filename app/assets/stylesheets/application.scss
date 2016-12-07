@@ -72,6 +72,14 @@
     justify-content: center;
   }
 ////////////////////
+////////// MEMBERS events /////////
+#partial-wrapper-events {
+  margin: 130px 10px 10px 10px;
+  // position: absolute;
+  float: right;
+  width: 20%;
+}
+////////////////////
 ///////// MEMBERS groups ////////////
 .groups-link{
   position: absolute;
@@ -135,8 +143,3 @@
     text-decoration: none;
   }
 /////////////
-#events {
-  float: right;
-    display: inline-block;
-    width: 30%;
-  }

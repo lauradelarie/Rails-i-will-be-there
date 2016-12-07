@@ -1,14 +1,23 @@
-<h2>Your events</h2><br>
-<% @events.each do |e| %>
-<div class="events">
-  <span>Event: <strong><%= e["name"] %></strong></span>
-  <p>Location:
-    <%- if e["venue"].present? %>
-      <%= e["venue"]["name"] %>
-      <%= e["venue"]["address_1"] %>
-      <%= e["venue"]["city"].upcase %></p>
+<div id="partial-wrapper-events">
+
+  <h2>Your events</h2><br><br>
+
+  <div id='events'>
+
+    <% @events.each do |e| %>
+      <%- if e["venue"]["name"] != "MOIRA" %>
+      <div class="events">
+        <span>Event: <strong><%= e["name"] %></strong></span>
+        <p>Location:
+          <%- if e["venue"].present? %>
+            <%= e["venue"]["name"] %>
+            <%= e["venue"]["address_1"] %>
+            <%= e["venue"]["city"].upcase %></p>
+          <% end %>
+        <p>Group: <%= e['group']['name'] %> </p>
+        <a href="<%= e["event_url"] %>"> See Event</a>
+      </div><br><br>
+      <% end %>
     <% end %>
-  <p>Group: <%= e['group']['name'] %> </p>
-  <a href="<%= e["event_url"] %>"> See Event</a>
-</div><br><br>
-<% end %>
+  </div>
+</div>
