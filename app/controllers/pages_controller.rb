@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
   end
 
-  def get_groups
+  def groups
     users_with_token = User.where.not(token: [nil, ''])
     current_user = users_with_token[0]
     oauth_token = current_user.token
@@ -12,12 +12,12 @@ class PagesController < ApplicationController
     @groups = Meetup.new(oauth_token, member_id).groups
     @user = User.first
 
-    respond_to do |format|
-      format.js
-      format.json { render json: @groups, status: :success }
-    end
-
-    render action: :member
+    # respond_to do |format|
+    #   format.js
+    #   format.json { render json: @groups, status: :success }
+    # end
+    #
+    # render action: :member
   end
 
   def get_group_events
