@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   get '/get_groups' => 'pages#get_groups'
   get '/get_group_events' => 'pages#get_group_events'
 
-  resources :pages
+  resources :pages do
+    collection do
+      get 'get_groups'
+    end
+  end
 
 
 

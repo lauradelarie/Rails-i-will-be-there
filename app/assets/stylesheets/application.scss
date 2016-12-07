@@ -5,6 +5,9 @@
  //   padding: 0px;
  //   border: 0px;
  // }
+h1 {
+  display: inline-block;
+}
 
  h2 {
    font-family: 'Raleway', cursive;
@@ -31,27 +34,24 @@
   position: fixed;
   width:100%;
   background-color: #7EC1D1;
-
+  height: 80px;
+  padding-right: 40px;
+  padding-left: 50px;
 }
-  .logo {
-    position: relative;
-    max-width: 120px;
-    max-height: 120px;
-  }
 
   .welcome {
     position: relative;
     font-family: 'Leckerli One', cursive;
     font-size:40px;
-    padding: 20px;
   }
 
-  .sign-out-link {
+  .navbar-link {
+    position: relative;
     float: right;
     margin: 20px;
+    margin-top: 30px;
     text-decoration: none;
   }
-////////////////////
 ////////// MEMBERS favourite groups /////////
 #partial-wrapper-favourites {
   margin: 130px 10px 10px 10px;
@@ -69,7 +69,7 @@
   #favourites {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    margin-left: 50px;
   }
 ////////////////////
 ////////// MEMBERS events /////////
@@ -81,19 +81,20 @@
 }
 ////////////////////
 ///////// MEMBERS groups ////////////
-.groups-link{
-  position: absolute;
-  float: left;
-  clear: left;
-  padding: 10px;
-  margin: 10px;
-  background-color: #F5F5F5;
-  border: 1px solid transparent;
-  border-color: #ddd;
-  border-radius: 5px;
-  box-shadow: 0 2px 1.5px rgba(0, 0, 0, 0.2);
-  margin-top: 500px;
-}
+// .groups-link{
+//   position: absolute;
+//   float: left;
+//   clear: left;
+//   padding: 10px;
+//   margin: 10px;
+//   margin-top: 50px;
+//   background-color: #F5F5F5;
+//   border: 1px solid transparent;
+//   border-color: #ddd;
+//   border-radius: 5px;
+//   box-shadow: 0 2px 1.5px rgba(0, 0, 0, 0.2);
+//   margin-top: 500px;
+// }
 
 .groups {
   display: flex;

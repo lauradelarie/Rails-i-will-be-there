@@ -16,6 +16,8 @@ class PagesController < ApplicationController
       format.js
       format.json { render json: @groups, status: :success }
     end
+
+    render action: :member
   end
 
   def get_group_events
