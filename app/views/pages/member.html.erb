@@ -1,9 +1,10 @@
+<div id="members-header">
+  <a href='<%=root_url%>'><img class='logo' src="http://res.cloudinary.com/dsiyhc1tt/image/upload/v1479235744/meetup-logo_h5atgk.png"></a>
+  <span class="welcome"> Welcome <%= current_user.name %>! </span>
+  <span class="sign-out-link"> <%= link_to "Sign Out", signout_path %> </span>
+</div>
 
-<span class="welcome"><a href='<%=root_url%>'><img class='logo' src="http://res.cloudinary.com/dsiyhc1tt/image/upload/v1479235744/meetup-logo_h5atgk.png"></a>
-
- Welcome <%= current_user.name %>! </span>
 <!-- Links to sign out with Meetup -->
-<span class="sign-out-link"> <%= link_to "Sign Out", signout_path %> </span>
   <br><br>
   <div id='events'>
     <%= render 'events' %>

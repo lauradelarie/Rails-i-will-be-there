@@ -2,7 +2,7 @@
 @import "bootstrap";
 
  html, body {
-   margin: 10px;
+  //  margin: 10px;
    padding: 0px;
    border: 0px;
  }
@@ -18,18 +18,54 @@
   list-style: none;
  }
 
-.logo {
-  max-width: 120px;
-  max-height: 120px;
+//////// MEMBERS app ////////
+.panel {
+    margin: 20px;
+    width: 300px;
 }
 
-.welcome {
-  font-family: 'Leckerli One', cursive;
-  font-size:40px;
-  text-align:left;
+.panel-body {
+  height: 150px;
+}
+/////////////////
+//////// MEMBERS header ////////
+#members-header {
+  position: fixed;
+  width:100%;
+  background-color: rgb(154, 242, 189);
+
+}
+  .logo {
+    position: relative;
+    max-width: 120px;
+    max-height: 120px;
+  }
+
+  .welcome {
+    position: relative;
+    font-family: 'Leckerli One', cursive;
+    font-size:40px;
+    padding: 20px;
+  }
+
+  .sign-out-link {
+    float: right;
+    margin: 20px;
+    text-decoration: none;
+  }
+////////////////////
+////////// MEMBERS favourite groups /////////
+.favourites {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
 }
 
-.header{
+////////////////////
+
+.home-header{
   display:flex;
   max-width:1250px;
   margin:auto;
@@ -41,14 +77,6 @@
     font-family: 'Leckerli One', cursive;
     font-size:60px;
     text-align:left;
-  }
-
-  .navbar{
-    font-family:'Slabo 27px', sans-serif;
-    display:flex;
-    list-style-type: none;
-    align-items: center;
-    letter-spacing:1px;
   }
 
   .sign-in{
@@ -64,14 +92,6 @@
    width:1200px;
    margin:0 auto;
 }*/
-  .favourites {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-  }
-
   .groups {
     display: flex;
     flex-wrap: wrap;
@@ -80,19 +100,8 @@
     width: 60%;
   }
 
-  .panel {
-      margin: 20px;
-      width: 300px;
-  }
 
-  .panel-body {
-    height: 150px;
-  }
 
-    .sign-out-link {
-      float: right;
-      text-decoration: none;
-    }
 
     .group-title {
       /*padding: 2px;*/
