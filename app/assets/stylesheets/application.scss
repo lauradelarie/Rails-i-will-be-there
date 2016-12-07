@@ -1,13 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
- html, body {
-   padding: 0px;
-   border: 0px;
- }
+ // html, body {
+ //   padding: 0px;
+ //   border: 0px;
+ // }
 
  h2 {
-   position: absolute;
    font-family: 'Raleway', cursive;
    font-size: 28px;
    margin: 10px;
@@ -19,8 +18,7 @@
 
 //////// MEMBERS app ////////
 .panel {
-  display: inline-block;
-  margin: 10px;
+  margin: 10px 0 10px 10px;
   width: 300px;
 }
 
@@ -32,7 +30,7 @@
 #members-header {
   position: fixed;
   width:100%;
-  background-color: rgb(154, 242, 189);
+  background-color: #7EC1D1;
 
 }
   .logo {
@@ -55,21 +53,32 @@
   }
 ////////////////////
 ////////// MEMBERS favourite groups /////////
-#favourites {
+#partial-wrapper-favourites {
   margin: 130px 10px 10px 10px;
   position: absolute;
   float: left;
-  display: flex;
-  flex-wrap: wrap;
-  // justify-content: center;
-  // align-items: center;
   width: 60%;
 }
+
+  #favourites-header {
+    display: block;
+    position: absolute;
+    margin: 10px 10px 10px 105px;
+  }
+
+  #favourites {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 ////////////////////
 ///////// MEMBERS groups ////////////
 .groups-link{
   position: absolute;
+  float: left;
+  clear: left;
   padding: 10px;
+  margin: 10px;
   background-color: #F5F5F5;
   border: 1px solid transparent;
   border-color: #ddd;
@@ -78,7 +87,33 @@
   margin-top: 500px;
 }
 
+.groups {
+  display: flex;
+  clear: both;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+  .group-title {
+    /*padding: 2px;*/
+    font-size: 16px;
+    font-weight: bold;
+    float:left;
+  }
+
+  .image {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  #add-favourite {
+    /*float: right;*/
+    /*padding: 2px;*/
+  }
 ////////////////////
+
+/////////// HOME /////////////
 
 .home-header{
   display:flex;
@@ -99,43 +134,9 @@
     margin:10px 20px 10px 100px;
     text-decoration: none;
   }
-
-// .group {
-//   margin: 10px;
-// }
-  /*.wrap {
-   width:1200px;
-   margin:0 auto;
-}*/
-  .groups {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-  }
-
-
-
-
-    .group-title {
-      /*padding: 2px;*/
-      font-size: 16px;
-      font-weight: bold;
-      float:left;
-    }
-
-    .image {
-      max-width: 100px;
-      max-height: 100px;
-    }
-
-    #add-favourite {
-      /*float: right;*/
-      /*padding: 2px;*/
-    }
-  #events {
-    float: right;
+/////////////
+#events {
+  float: right;
     display: inline-block;
     width: 30%;
   }

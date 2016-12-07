@@ -15,5 +15,6 @@
   <%#= render 'recommended' %>
 
 
-  <div class="groups-link"><%= link_to "See all your Groups", get_groups_path, :remote => true %> </div> <br>
-    <%#= render 'groups' %>
+<div class="groups-link"><%= link_to "See all your Groups", get_groups_path, :remote => true %> </div>
+<%= link_to "See all your Groups", get_groups_path, remote: true %>
+<%#= render 'groups' %>
