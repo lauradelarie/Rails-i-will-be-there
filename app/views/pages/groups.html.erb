@@ -1,1 +1,38 @@
-groups
+<div id="members-header">
+  <h1 class="welcome"><%= current_user.name %> </h1>  , you will be there!
+  <div class="navbar-link"> <%= link_to "Sign Out", signout_path %> </div>
+  <div class='navbar-link'><%= link_to "See all your Groups", groups_path, :remote => true %> </div>
+  <h2 class="navbar-title">Your groups</h2>
+</div>
+
+
+<div id="groups">
+
+<% @groups.each do |group| %>
+
+  <div class="panel panel-default" id="<%= "#{group["id"]}" %>" data-hidden="true" data-group='{"groupId":"<%= group["id"] %>"}' data-name='{"groupName":"<%= group["name"] %>"}' data-user='{"userId":"<%= @user.id %>"}'>
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+      <a href="<%= group["link"]%>" target="_blank"><%= group["name"] %></a>
+    </div>
+    <div class="panel-body">
+      <%- if group["group_photo"].present? %>
+        <a href='<%= group["group_photo"]["photo_link"] %>'><img class="image" src="<%= group["group_photo"]["photo_link"] %>"></a>
+      <% end %>
+    </div>
+
+    <!-- List group -->
+    <ul class="list-group">
+      <li class="list-group-item">
+          <button type="button" id="add-favourite" onClick="submitFavourite(event)"> ♥ </button>
+      </li>
+      <li><%= group['organizer']['name'] %> </li>
+      <li>
+        <div id="get-group-events">
+          <%= link_to "Get group events", get_group_events_path, data: group['id'], :remote => true %> <br>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <% end %>
+</div>

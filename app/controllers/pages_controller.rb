@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :member_signed_in?, only: [:member]
+  before_action :member_signed_in?, only: [:member, :groups]
 
   def home
   end

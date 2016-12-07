@@ -10,9 +10,9 @@ h1 {
 }
 
  h2 {
-   font-family: 'Raleway', cursive;
-   font-size: 28px;
-   margin: 10px;
+  font-family: 'Raleway', cursive;
+  font-size: 28px;
+  margin: 10px;
  }
 
  li {
@@ -38,6 +38,13 @@ h1 {
   padding-right: 40px;
   padding-left: 50px;
 }
+
+  .navbar-title {
+    display: inline-block;
+    position: relative;
+    float: right;
+    padding: 10px 50px 0 10px;
+  }
 
   .welcome {
     position: relative;
@@ -80,7 +87,7 @@ h1 {
   width: 20%;
 }
 ////////////////////
-///////// MEMBERS groups ////////////
+///////// GROUPS ////////////
 // .groups-link{
 //   position: absolute;
 //   float: left;
@@ -96,14 +103,15 @@ h1 {
 //   margin-top: 500px;
 // }
 
-.groups {
+#groups {
   display: flex;
-  clear: both;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 60%;
+  margin: 170px 10px 10px 50px;
+  position: absolute;
+  float: left;
+  width: 80%;
 }
+
   .group-title {
     /*padding: 2px;*/
     font-size: 16px;
