@@ -1,7 +1,7 @@
 <div id="members-header">
   <h1 class="welcome"><%= current_user.name %> </h1>  , you will be there!
   <div class="navbar-link"> <%= link_to "Sign Out", signout_path %> </div>
-  <div class='navbar-link'><%= link_to "See all your Groups", groups_path, :remote => true %> </div>
+  <div class='navbar-link'> <%= link_to "Dashboard", member_path %> </div>
   <h2 class="navbar-title">Your groups</h2>
 </div>
 

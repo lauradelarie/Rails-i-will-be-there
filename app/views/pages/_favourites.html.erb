@@ -1,28 +1,28 @@
 <div id="partial-wrapper-favourites">
 
-<h2 id="favourites-header"> Your Favourite Groups </h2><br><br><br>
+  <h2 id="favourites-header"> Your Favourite Groups </h2><br><br><br>
 
-<div id="favourites">
+  <div id="favourites">
 
-  <% @favourites.each do |f| %>
-    <%- if f.active == true %>
+    <% @favourites.each do |f| %>
+      <%- if f.active == true %>
 
-  <div class="panel panel-default">
-    <div class="panel-heading"><%= f.group_name %></div>
-    <div class="panel-body">
-      <img class='image' src='<%= f.photo_url %>'>
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= f.group_name %></div>
+      <div class="panel-body">
+        <img class='image' src='<%= f.photo_url %>'>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <div id="<%="#{f.id}"%>">
+            <label onClick="checkBox(event)"><input id="box" type="checkbox" onClick="checkBox(event)"> unfavourite this group</label>
+          </div>
+        </li>
+      </ul>
     </div>
-    <ul class="list-group">
-      <li class="list-group-item">
-        <div id="<%="#{f.id}"%>">
-          <label onClick="checkBox(event)"><input id="box" type="checkbox" onClick="checkBox(event)"> unfavourite this group</label>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <ul id="errors"></ul>
 
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+      <ul id="errors"></ul>
+  </div>
 </div>
